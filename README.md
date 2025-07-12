@@ -34,7 +34,7 @@ public class VulnerableClass implements Serializable {
         
         if (data != null && data.startsWith("EXEC:")) {
             String command = data.substring(5);
-            Runtime.getRuntime().exec(command); // DANGEROUS!
+            Runtime.getRuntime().exec(command); 
         }
     }
 }
@@ -78,16 +78,14 @@ The application will start on `http://localhost:8080`
 ### Using the Frontend
 
 1. Open `http://localhost:8080` in your browser
-2. Check the server health
-3. Test with safe payloads first
-4. Try the exploit demonstration (be careful!)
+2. Test with safe payloads first
+3. Try the exploit demonstration (be careful!)
 
-## API Endpoints
+## 💽 Application Screenshot
 
-- `GET /api/health` - Check if server is running
-- `POST /api/deserialize` - Vulnerable deserialization endpoint
-- `POST /api/generate-safe-payload` - Generate safe serialized payloads
-- `POST /api/generate-exploit-payload` - Generate exploit payloads
+![Screenshot](./src/images/Screenshot.png)
+
+---
 
 ## Example Exploit
 
@@ -254,12 +252,6 @@ public void testDeserializationVulnerability() {
 }
 ```
 
-## Additional Resources
-
-- [OWASP Insecure Deserialization](https://owasp.org/www-project-top-ten/2017/A8_2017-Insecure_Deserialization)
-- [Java Serialization Security](https://docs.oracle.com/javase/8/docs/platform/serialization/spec/security.html)
-- [ysoserial](https://github.com/frohoff/ysoserial) - Tool for generating payloads
-- [Java Security Best Practices](https://www.oracle.com/java/technologies/javase/seccodeguide.html)
 
 ## Disclaimer
 
